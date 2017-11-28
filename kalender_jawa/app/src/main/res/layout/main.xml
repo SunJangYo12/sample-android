@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:id="@+id/scrollView1"  
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content" >  
+
+    <LinearLayout   
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:orientation="vertical">  
+        <LinearLayout  
+            android:id="@+id/header"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:orientation="vertical" >  
+
+            <TextView android:id="@+id/dateDisplay"  
+				android:layout_width="wrap_content"  
+				android:layout_height="wrap_content"  
+				android:text=""/>  
+
+            <Button android:id="@+id/pickDate"  
+				android:layout_width="wrap_content"  
+				android:layout_height="wrap_content"  
+				android:text="Ganti Tanggal"/>  
+        </LinearLayout>  
+
+        <LinearLayout  
+            android:id="@+id/detail"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:orientation="horizontal" >  
+
+            <TableLayout  
+                android:id="@+id/tableLayout"  
+                android:layout_width="match_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_gravity="center"  
+                android:layout_weight="1" >  
+            </TableLayout>  
+
+
+        </LinearLayout>  
+        <LinearLayout  
+            android:id="@+id/legend"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:orientation="vertical" >  
+
+			<TextView android:id="@+id/legendDisplay"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:text=""/>  
+        </LinearLayout>  
+    </LinearLayout>  
+</ScrollView>  
