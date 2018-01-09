@@ -5,6 +5,7 @@ import android.content.*;
 import android.view.*;
 import android.os.*;
 import android.graphics.*;
+import android.widget.*;
 
 public class VideoRecordService extends Service {
 
@@ -17,6 +18,8 @@ public class VideoRecordService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+		Toast.makeText(this, "flag = "+flags+" startId = "+startId, Toast.LENGTH_SHORT).show();
+		
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         this.dummyPreview = new DummyPreview(this, startId);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams(300, 300,

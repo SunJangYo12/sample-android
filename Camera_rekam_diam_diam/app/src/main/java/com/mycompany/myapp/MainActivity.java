@@ -28,6 +28,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onStart() {
         super.onStart();
         if (binder == null) {
+			Toast.makeText(this, "start", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, VideoRecordService.class);
             bindService(intent, serviceConnection, 0);
         }
@@ -48,6 +49,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onStop() {
         super.onStop();
         if (binder != null) {
+			Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
+			
             unbindService(serviceConnection);
             binder = null;
         }
