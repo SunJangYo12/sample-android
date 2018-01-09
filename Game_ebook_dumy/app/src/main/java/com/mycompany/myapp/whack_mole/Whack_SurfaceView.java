@@ -63,8 +63,9 @@ public class Whack_SurfaceView extends SurfaceView implements SurfaceHolder.Call
 	// game over
 	private boolean gameOver = false;
 	private Bitmap gameOverDialog;
-
 	
+	
+
 	public Whack_SurfaceView(Context context, AttributeSet attrs) {	
         super(context, attrs);
         SurfaceHolder holder = getHolder();
