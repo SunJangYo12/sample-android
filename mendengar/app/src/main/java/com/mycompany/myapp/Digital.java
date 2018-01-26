@@ -39,6 +39,7 @@ public class Digital extends Activity implements View.OnClickListener {
 		if (aSwitch.isChecked()) 
 		{
 			output.mulai();
+			
 		} 
 		else 
 		{
@@ -46,6 +47,55 @@ public class Digital extends Activity implements View.OnClickListener {
 		}
 	}
 }
+
+class GrafikSuara extends SurfaceView implements SurfaceHolder.Callback 
+{
+	private AnimasiThread animasiThread;
+	private boolean ready = false;
+	private int width, height;
+
+	public GrafikSuara(Context context)
+	{
+		super(context);
+		getHolder().addCallback(this);
+	}
+	public void mulai() {
+		if (ready){
+			animasiThread = new AnimasiThread(getHolder());
+			animasiThread.setWidth(width);
+			animasiThread.setHeight(height);
+			animasiThread.startCapture();
+		}
+	}
+	public void selesai() { 
+		if (animasiThread != null)
+		{
+			animasiThread.stopCapture();
+			animasiThread = null;
+		}
+	}
+	@Override
+	public void surfaceCreated(SurfaceHolder holder) {
+		ready = true;
+	}
+	@Override
+	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+		this.width = width;
+		this.height = height;
+		if (animasiThread != null)
+		{
+			animasiThread.setWidth(width);
+			animasiThread.setHeight(height);
+		}
+	}
+	@Override
+	public void surfaceDestroyed(SurfaceHolder holder) {
+		if (animasiThread != null)
+		{
+			animasiThread.stopCapture();
+		}
+	}
+} // class grapic
 
 class AnimasiThread extends Thread
 {
@@ -56,7 +106,8 @@ class AnimasiThread extends Thread
 	private int width, height;
 	private float midLine, scale;
 	private final Paint warnaGaris;
-	private static int delay = 0;
+	private final Paint warnaMerah;
+	private static int getar = 0;
 	
 	public AnimasiThread(SurfaceHolder surfaceHolder)
 	{
@@ -67,6 +118,8 @@ class AnimasiThread extends Thread
 									  AudioFormat.ENCODING_PCM_16BIT, captureSize);
 		warnaGaris = new Paint();
 		warnaGaris.setColor(Color.GREEN);
+		warnaMerah = new Paint();
+		warnaMerah.setColor(Color.RED);
 	}
 	public void setWidth(int width) {
 		this.width = width;
@@ -99,24 +152,19 @@ class AnimasiThread extends Thread
 			{
 				c = surfaceHolder.lockCanvas();
 				c.drawColor(Color.BLACK);
-				for (int i = 0; i < captureSize; i++)
+				for (int i = 0; i < captureSize; i++) //< ribuan
 				{
-					float trY = midLine - buffer[i] * scale;
+					float trY = midLine - buffer[i] * scale; //= 43.57755
 					if ((lastX != null) && (lastY != null))
 					{
 						c.drawLine(lastX, lastY, i, trY, warnaGaris);
+						c.drawPoint(i, trY+300, warnaMerah);
+						
 					} 
 					else
 					{
-						c.drawPoint(i, trY, warnaGaris);
-						c.drawText("buffer : "+buffer[i], 10, 60, warnaGaris);
-						
-						if (buffer[i] >= 3000)
-						{
-							c.drawText("Hasil : "+buffer[i], 10, 80, warnaGaris);
-							delay++;
-						}
-						c.drawText("jumlah : "+delay, 10, 90, warnaGaris);
+						c.drawText("amplitudo : "+buffer[i], 10, 60, warnaGaris);
+						c.drawText("frekuensi : "+buffer[i], 10, 60+40, warnaGaris);
 						
 					}
 					lastX = (float) i;
@@ -134,52 +182,5 @@ class AnimasiThread extends Thread
 	}
 }
 
-class GrafikSuara extends SurfaceView implements SurfaceHolder.Callback 
-{
-	private AnimasiThread animasiThread;
-	private boolean ready = false;
-	private int width, height;
 	
-	public GrafikSuara(Context context)
-	{
-		super(context);
-		getHolder().addCallback(this);
-	}
-	public void mulai() {
-		if (ready)
-		{
-			animasiThread = new AnimasiThread(getHolder());
-			animasiThread.setWidth(width);
-			animasiThread.setHeight(height);
-			animasiThread.startCapture();
-		}
-	}
-	public void selesai() {
-		if (animasiThread != null)
-		{
-			animasiThread.stopCapture();
-			animasiThread = null;
-		}
-	}
-	@Override
-	public void surfaceCreated(SurfaceHolder holder) {
-		ready = true;
-	}
-	@Override
-	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		this.width = width;
-		this.height = height;
-		if (animasiThread != null)
-		{
-			animasiThread.setWidth(width);
-			animasiThread.setHeight(height);
-		}
-	}
-	@Override
-	public void surfaceDestroyed(SurfaceHolder holder) {
-		if (animasiThread != null)
-		{
-			animasiThread.stopCapture();
-		}
-	}
-}
+

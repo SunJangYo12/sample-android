@@ -1,0 +1,28 @@
+BistroMath
+
+A specialized calculator for solving certain "bistromatic" calculations involving numbers
+on a a waiters check-pad and people in restaurants. For a certain net amount, 
+we can optionally calculate tax, tip, how to split the bill among N people and for
+international travelers, what all this would mean in another currency. Use menu to set
+the necessary input parameters and see the numbers dance as a result.
+
+Use menu or touch-screen to select which parameter to input an any affected fields will update
+automatically. Rows which currently are not applicable are hidden in the display unless they
+are active for input. For data input, use the virtual key-pad or the equivalent keys on the 
+keyboard if available.
+
+Input parameters are:
+Price: total amount of restaurant bill (pre or post tax depending on the situation)
+Tax: tax rate applied to price
+Tip: tipping rate applied to price
+Split: number of people among which to divide the bill equally
+FX Rate: currency conversion rate between the local currency of the restaurant and the users own
+  currency in case of international travel.
+  
+See display fields for "Total" or "Per Person" for how much should be payed based on the above input.
+
+Author: Bernhard Suter (Bernhard.R.Suter-at-gmail-dot-com)
+License: http://www.apache.org/licenses/LICENSE-2.0
+Source: http://code.google.com/p/android-labs/source/browse/#svn/trunk/BistroMath
+
+October 2008: Initial release for the Android platform running on T-Mobile G1.

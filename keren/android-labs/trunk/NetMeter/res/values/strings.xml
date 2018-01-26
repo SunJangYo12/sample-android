@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetMeter</string>
+    <string name="top_title">CPU activity by Task (last 30s)</string>
+    <string name="help_title">NetMeter Help</string>
+    <string name="iconized">NetMeter display</string>    
+    <string name="menu_reset">reset</string>
+    <string name="menu_toggle">toggle scale</string>
+    <string name="menu_top">show tasks</string>
+    <string name="menu_stop">stop</string>
+    <string name="menu_help">help</string>
+    <string name="disp_wifi">Wifi</string>
+    <string name="disp_cell">Cell</string>  
+    <string name="disp_cpu">CPU load</string>
+    <string name="disp_cpu_type"> (app/kernel)</string>
+    <string name="disp_battery">Battery</string>
+    <string name="disp_name">Name</string>
+    <string name="disp_type">Speed</string>
+    <string name="disp_in">Bytes in</string>
+    <string name="disp_out">Bytes out</string>  
+    <string name="disp_user">apps</string>
+    <string name="disp_system">kernel</string>  
+    <string name="disp_collecting">Collecting Data...</string>
+    <string name="help_text">
+    \n
+    \n<big><b>NetMeter</b> - Network and CPU performance monitor</big>\n
+    \n
+    NetMeter allows to trouble-shoot performance problems by letting the user see network and CPU usage
+    over time. On a mobile device, battery power is one of the most critical resources.
+    Unexpected heavy network and CPU usage could be indicative power consuming background activities.\n
+    \n
+    To allow monitoring while doing some other activity,
+    NetMeter can keep running in the background while continuing to collect measurements.\n
+    \n
+    Whenever NetMeter is active, a small blue graph icon can be seen in the notification bar, by which it can
+    always be launched again into the foreground.\n
+    \n
+    Use <i>\"stop\"</i> from the menu to close down NetMeter and stop the data collection. The <i>\"reset\"</i> menu option will
+    reset the cumulative network usage counters in the tabular display part of the screen, without affecting the
+    usage history graph. By default, the history graph shows the maximum amount of available data (max 24h) since
+    NetMeter has been started. Use the <i>\"toggle scale\"</i> menu option to switch between shorter, more detailed views 
+    of the recent past.\n
+    \n
+    <b>Finding out which apps consume CPU</b>\n
+    To see a detailed breakdown of CPU utilization by tasks, use the <i>\"show tasks\"</i> menu option.
+    It will show which processes in the Android platform have been using CPU during
+    the last 30s and how much. Android does not allow applications to terminate other application processes -
+    this is part of its security model. The Android framework itself manages processes and other OS resources 
+    transparently based on
+    application demand. Terminating a process would simply result in it being restarted again if the application
+    still requests to run. Android provides great power and flexibility to application developers, like installing
+    application services to run completely in the background. The only way at this point to deal with application
+    which put an undue strain on resources is to stop them - if the allow to do so, or otherwise uninstall them
+    and contact the developer about providing a more resource efficient implementation.\n
+    \n
+    <b>Impact and limitations</b>\n
+    Measuring detailed CPU utilization is in itself a resource consuming process. Therefore NetMeter itself
+    is likely to show up towards the top of the list of CPU consuming tasks. However once stopped, NetMeter
+    no longer consumes any resources. The history of measurements are kept in memory only by the NetMeter background
+    process. If the phone runs low on memory - the Android platform may decide to stop and restart the process
+    at any time, which will erase the accumulated history and start collection afresh.\n
+    \n
+    NetMeter is primarily intended as an interactive diagnostic tool and not as a long-term network usage counter.
+    For that purpose applications like NetCounter are a better fit.\n
+    \n
+    More information, including the source code can be found at http://android-labs.googlecode.com/\n
+    \n
+    For any comments or questions please contact android@kugelfish.com\n
+    \n
+    Enjoy!\n
+    </string>
+</resources>

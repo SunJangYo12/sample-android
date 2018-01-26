@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="@string/m_amount" android:id="@+id/m_amount"/>
+<item android:title="@string/m_tax" android:id="@+id/m_tax"/>
+<item android:title="@string/m_tip" android:id="@+id/m_tip"/>
+<item android:title="@string/m_people" android:id="@+id/m_people"/>
+<item android:title="@string/m_fx" android:id="@+id/m_fx"/>
+<item android:title="@string/m_calculator" android:icon="@android:/drawable/ic_dialog_dialer" android:id="@+id/m_calculator"/>
+<item android:title="@string/m_expense" android:id="@+id/m_expense"/>
+<item android:title="@string/m_help" android:icon="@android:/drawable/ic_menu_help" android:id="@+id/m_help"/>
+</menu>

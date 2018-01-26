@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BistroMath</string>
+    <string name="disp_local_currency">Local Currency</string>
+    <string name="disp_ref_currency">My Currency</string>
+    <string name="disp_amount">Price</string>
+    <string name="disp_tax">% Tax</string>
+    <string name="disp_tip">% Tip</string>
+    <string name="disp_total">Total</string>
+    <string name="disp_people">Per Person</string>
+    <string name="m_amount">Price</string>
+    <string name="m_tax">Tax</string>
+    <string name="m_tip">Tip</string>
+    <string name="m_people">Split</string>
+    <string name="m_fx">FX Rate</string>
+    <string name="m_calculator">Calculator</string>
+    <string name="m_expense">File Expense</string>
+    <string name="m_help">Help</string>
+    <string name="err_expense">Install \"Funky Expenses\" application to handle expense reporting requests</string>
+    <string name="help_title">BistroMath Help</string>
+    <string name="help_text">
+    \n
+    \n<big><b>BistroMath</b> quick and easy tip calculator</big>\n
+    \n
+    BistroMath is a specialized calculator for solving \"bistromatic\" problems which involve numbers
+	on a a waiters check-pad and people in restaurants.\n
+	\n
+	Given the amount on the bill, 
+	we can quickly calculate tax, tip, how to divide equally among N people or convert into another currency.\n
+	\n
+	<b>Example</b>\n
+	The goal is to be as quick and efficient as possible. In a standard case, to calculate the amount
+	to be payed on a check of 100, this would mean - launch the BistroMath application, 
+	tap directly on the on-screen virtual keypad \'1\' - \'0\' - \'0\' and read the result! No fumbling with
+	the keyboard or navigating multiple screens or dialogs.\n
+	\n
+	<b>Changing Inputs</b>\n
+	If any of the other input parameters are not set correctly, adjust them by selecting which field to update
+    by menu or touch-screen and use the keypad to enter a new value. All other fields will again instantly 
+    update themselves. Fields which currently are not applicable are hidden in the display - to enter a value,
+    select it using the menu option.
+	\n
+	The inputable fields are (select from menu or tap on screen to modify):\n
+	<b>-Price</b>: total amount of restaurant bill (pre or post tax depending on the situation)\n
+	<b>-Tax</b>: tax rate applied to price\n
+	<b>-Tip</b>: tipping rate applied to price\n
+	<b>-Split</b>: number of people among which to divide the bill equally\n
+	<b>-FX Rate</b>: currency conversion rate between the local currency of the restaurant and the users own
+  	currency in case of international travel.\n
+  	\n
+	See display fields for \"Total\" or \"Per Person\" amount for how much should be paid based on the above input.\n
+    \n
+    <b>Before or after tax?</b>\n
+    Depending on local custom or you preference, you can calculate tip before or after tax. 
+    By setting a tax rate (menu->Tax and enter the tax rate number) and a tipping rate (menu->Tip and enter
+    the desired percentage for the tip), both values are now calculated separately based on the pre-tax
+    amount of the bill.\n
+    \n
+    <b>File expenses</b>\n
+    After calculating, the results can be passed to an expense reporting application for expense tracking and filing.
+    At this point, the only application which supports the triggering intent is \"Funky Expenses\". To file an expense
+    based on the current total, select menu->More->File Expense or tap on the field with the total value on the
+    screen. Totals in both local and my currency as well as the per-person values in local and my currency can be
+    filed to the expense reporting app as well by tapping on the corresponding fields (no menu support, except for
+    the total).
+    \n
+    \n
+    For any comments or questions please contact android@kugelfish.com\n
+    \n
+    Enjoy!\n
+    </string>
+</resources>

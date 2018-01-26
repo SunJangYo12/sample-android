@@ -1,0 +1,38 @@
+NetMeter
+
+A network activity monitor for Android to keep track of transmit and receive counters on
+the mobile data network and the wifi interface. The display screen shows the cumulative numbers
+in a table and a graph of historic bps measured by sampling the counters every 5s. In addition to 
+interface counters, CPU utilization is tracked - both current and historical evolution.
+
+One of the initial motivations for writing this was the lack of monitoring of what activities
+newly installed applications might be doing in the background - badly affecting battery life. 
+Networking and CPU activity are just 2 indicators of such activity. On the other hand running
+this application itself has a negative impact on battery life, due to the 5s background polling.
+
+The application uses a combination of main activity and local, in-process service to appear as an
+interactive application which can continue running in the background until the user explcitly
+exits it. While running a persistent notification is posted in the status bar, which can be used
+ at any time to bring up the display activity.
+ 
+ All counters are kept in memory of the service and are not persistent across reboot or even
+ restart of the application. For the wifi network, even disabling/enabling the interface will
+ reset the counters.
+ 
+ Most of the data is read directly from /proc and been tested on a T-Mobile G1 with R1 image.
+ Setup on other systems may vary and the application may not work.
+ 
+ Menu:
+ - reset: reset cumulative counter values
+ - toggle scale: change history graph timescale by circulating between 15min, 30min, 1h,
+   3h, 6h, 12h and 24h - up to the level at which data is available.
+ - show tasks: display a list of active tasks with their percentage of CPU used during the last
+   30 seconds.
+ - stop: stop stats collection service and exit application.
+
+Author: Bernhard Suter (Bernhard.R.Suter-at-gmail-dot-com)
+License: http://www.apache.org/licenses/LICENSE-2.0
+Source: http://code.google.com/p/android-labs/source/browse/#svn/trunk/NetMeter
+
+November 2008: Initial release for the Android platform running on T-Mobile G1.
+January 2009: Add support for CPU usage by task display

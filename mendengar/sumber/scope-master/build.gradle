@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 'android-22'
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        buildConfigField "long", "BUILT", System.currentTimeMillis() + "L"
+    }
+
+    lintOptions {
+	disable 'IconDensities', 'ClickableViewAccessibility'
+	// abortOnError false
+    }
+}
