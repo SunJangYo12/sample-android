@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
 			"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 			"Linux", "OS/2" };
 		ListView ListView01 = (ListView)findViewById(R.id.listview);
-        ListView01.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, values));
+        ListView01.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_2, values));
         ListView01.setSelected(true);
 	}
 
