@@ -116,7 +116,7 @@ public class TouchService extends Service {
         mParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
         mParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
         mParams.x = mScreenWidth;
-        mParams.y = 520;
+        mParams.y = 0; //520
         mParams.gravity = Gravity.TOP|Gravity.LEFT;
         mParams.format = PixelFormat.RGBA_8888;
         mParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;

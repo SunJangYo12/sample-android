@@ -108,6 +108,7 @@ public class CreateNote extends Activity {
 					//so we came back to Simple_NotepadActivity
 					finish();
 				} else {
+					Toast.makeText(CreateNote.this, "", Toast.LENGTH_LONG).show();
 					//if this is edit mode, we just update the old note
 					dbhelper.updateNote(title, content, editTitle);
 					//and the same finish activity

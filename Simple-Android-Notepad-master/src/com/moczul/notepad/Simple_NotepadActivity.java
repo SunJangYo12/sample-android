@@ -25,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Simple_NotepadActivity extends Activity implements
 		OnItemClickListener {
@@ -163,6 +164,7 @@ public class Simple_NotepadActivity extends Activity implements
 			Intent mIntent = new Intent(this, OneNote.class);
 			mIntent.putExtra("id", items.get(position).getId());
 			startActivity(mIntent);
+			Toast.makeText(Simple_NotepadActivity.this, ""+items.get(position).getId(), Toast.LENGTH_LONG).show();
 			break;
 
 		case R.id.editNote:
