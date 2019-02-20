@@ -1,0 +1,6 @@
+<input-method xmlns:android="http://schemas.android.com/apk/res/android">
+	<subtype
+		android:name="fffff"
+		android:imeSubtypeLocale="en_US"
+		android:imeSubtypeMode="remote" />
+</input-method>
