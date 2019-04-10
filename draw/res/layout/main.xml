@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU" />
+
+    <Button
+        android:id="@+id/menggambar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DRAWING" />
+
+    <Button
+        android:id="@+id/gestures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GESTURES" />
+
+</LinearLayout>
